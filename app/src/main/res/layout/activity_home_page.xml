@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="30dp"
+            android:paddingVertical="10dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:tabIndicatorColor="@color/black"
+                app:tabIndicatorHeight="2dp"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextColor="@color/black">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Job List" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Company List" />
+
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/transparent_box"
+                android:focusable="false"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="Search" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <HorizontalScrollView
+                    android:id="@+id/job_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_part_time"
+                            style="@style/SmallTagButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/tag_button_selector"
+                            android:fontFamily="@font/sfprodisplaybold"
+                            android:stateListAnimator="@null"
+                            android:text="Part-time"
+                            android:textAllCaps="false"
+                            android:textColor="@color/darkgray2"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/btn_intern"
+                            style="@style/SmallTagButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/tag_button_selector"
+                            android:fontFamily="@font/sfprodisplaybold"
+                            android:stateListAnimator="@null"
+                            android:text="Intern"
+                            android:textAllCaps="false"
+                            android:textColor="@color/darkgray2"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/btn_fulltime"
+                            style="@style/SmallTagButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/tag_button_selector"
+                            android:fontFamily="@font/sfprodisplaybold"
+                            android:stateListAnimator="@null"
+                            android:text="Fulltime"
+                            android:textAllCaps="false"
+                            android:textColor="@color/darkgray2"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <HorizontalScrollView
+                    android:id="@+id/company_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_ecomm"
+                            style="@style/SmallTagButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/tag_button_selector"
+                            android:fontFamily="@font/sfprodisplaybold"
+                            android:stateListAnimator="@null"
+                            android:text="E-commerce"
+                            android:textAllCaps="false"
+                            android:textColor="@color/darkgray2"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/btn_tech"
+                            style="@style/SmallTagButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/tag_button_selector"
+                            android:fontFamily="@font/sfprodisplaybold"
+                            android:stateListAnimator="@null"
+                            android:text="Technology"
+                            android:textAllCaps="false"
+                            android:textColor="@color/darkgray2"
+                            android:textSize="11sp" />
+
+                        <Button
+                            android:id="@+id/btn_fintech"
+                            style="@style/SmallTagButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:background="@drawable/tag_button_selector"
+                            android:fontFamily="@font/sfprodisplaybold"
+                            android:stateListAnimator="@null"
+                            android:text="Fintech"
+                            android:textAllCaps="false"
+                            android:textColor="@color/darkgray2"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_listjob"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="30dp"
+            tools:listitem="@layout/list_job" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_listcompany"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingHorizontal="30dp"
+            tools:listitem="@layout/list_company" />
+
+        <fragment
+            android:id="@+id/nav_frag"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/mobile_navigation" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/lightblue"
+        android:paddingVertical="10dp"
+        app:menu="@menu/bottom_nav_menu" />
+
+</LinearLayout>

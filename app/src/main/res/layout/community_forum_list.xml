@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/textbox"
+    android:orientation="vertical"
+    android:layout_marginBottom="15dp"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <ImageView
+            android:id="@+id/iv_profile_pic"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/round_shape"
+            android:src="@drawable/round_shape" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@id/iv_profile_pic"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="[[Name]]"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_time_posted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:text="2hrs ago"
+            android:textColor="@color/darkgray2"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_post_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:lineSpacingExtra="2dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt urna sit amet lacinia egestas."
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+</LinearLayout>
