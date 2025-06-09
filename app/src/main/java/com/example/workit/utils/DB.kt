@@ -37,38 +37,33 @@ class DB {
             HAS_SYNC = true
         }
 
-        // INSERT DATA - User
+        fun getUserByEmail(email: String): User? {
+            return userList.find { it.email == email }
+        }
+
+
         fun InsertNewUser(ctx: Context, name: String, email: String, password: String) {
 
-            var id = userList.last().id + 1
-            var temp = User(id, name, email, password)
-//            var id = 1
-//            if (userList.size > 0) {
-//                id = userList.list ..
-//            }
+            val id = if (userList.isNotEmpty()) userList.last().id + 1 else 1
+            val temp = User(id, name, email, password)
             userList.add(temp)
 
-//            val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-//            val joinDateStr = dateFormat.format(joinDate)
-
-            // INSERT IN SQLite
-            var helper = Helper(ctx)
-            var db = helper.writableDatabase
+            val helper = Helper(ctx)
+            val db = helper.writableDatabase
             db.execSQL(
-                "INSERT INTO user(name, password)" +
-                        "VALUES" + "('"+name+"', '"+password+"')"
+                "INSERT INTO user(username, email, password, member_type) VALUES('$name', '$email', '$password', '')"
             )
         }
 
         var LOGGED_IN_USER: User? = null
-        fun login(name: String, password: String) {
-            // CTRL + J
+        fun login(email: String, password: String) {
             for (user in userList) {
-                if (user.name == name && user.password == password) {
+                if (user.email == email && user.password == password) {
                     LOGGED_IN_USER = user
                     return
                 }
             }
+            LOGGED_IN_USER = null
         }
 
     }

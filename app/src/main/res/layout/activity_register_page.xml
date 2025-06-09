@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="90dp"
         android:fontFamily="@font/sfprodisplaybold"
         android:gravity="center"
         android:text="WorkIt"
@@ -82,7 +82,7 @@
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="match_parent"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="310dp"
         android:fontFamily="@font/sfprodisplaybold"
         android:textColor="@color/black"
         android:textAlignment="center"
