@@ -52,17 +52,18 @@ class HomePage : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
-        val navController = findNavController(R.id.nav_frag)
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
         navView.selectedItemId = R.id.navigation_home
 
         navView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
+                    true
+                }
+
+                R.id.navigation_saved -> {
+                    val intent = Intent(this, SavedPage::class.java)
+                    startActivity(intent)
+                    finish()
                     true
                 }
 

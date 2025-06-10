@@ -27,8 +27,6 @@ class LoginPage : AppCompatActivity() {
         etPassword = findViewById(R.id.et_password)
         val btnLogin = findViewById<Button>(R.id.btn_login)
         val btnGoogle = findViewById<Button>(R.id.btn_google)
-        val btnApple = findViewById<Button>(R.id.btn_apple)
-        val tvForgot = findViewById<TextView>(R.id.tv_forgotpw)
         val tvTitle = findViewById<TextView>(R.id.tv_title)
         val tvRegister = findViewById<TextView>(R.id.tv_reg)
         val tvOr = findViewById<TextView>(R.id.tv_or)

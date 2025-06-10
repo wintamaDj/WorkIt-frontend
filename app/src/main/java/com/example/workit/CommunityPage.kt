@@ -42,6 +42,14 @@ class CommunityPage : AppCompatActivity() {
                     finish()
                     true
                 }
+
+                R.id.navigation_saved -> {
+                    val intent = Intent(this, SavedPage::class.java)
+                    startActivity(intent)
+                    finish()
+                    true
+                }
+
                 R.id.navigation_discover -> {
                     true
                 }

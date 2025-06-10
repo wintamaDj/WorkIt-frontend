@@ -28,6 +28,13 @@ class ProfilePage : AppCompatActivity() {
                     true
                 }
 
+                R.id.navigation_saved -> {
+                    val intent = Intent(this, SavedPage::class.java)
+                    startActivity(intent)
+                    finish()
+                    true
+                }
+
                 R.id.navigation_discover -> {
                     val intent = Intent(this, CommunityPage::class.java)
                     startActivity(intent)

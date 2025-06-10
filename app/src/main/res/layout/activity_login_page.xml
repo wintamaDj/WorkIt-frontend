@@ -50,17 +50,6 @@
         android:paddingBottom="17dp"
         android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/tv_forgotpw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="7dp"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:text="Forgot your password?"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
     <Button
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
@@ -105,20 +94,19 @@
 
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/btn_apple"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/apple_button"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:paddingTop="11dp"
-        android:paddingBottom="11dp"
-        android:text="Continue with Apple"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="17sp" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_apple"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/apple_button"-->
+<!--        android:fontFamily="@font/sfprodisplaybold"-->
+<!--        android:paddingTop="11dp"-->
+<!--        android:paddingBottom="11dp"-->
+<!--        android:text="Continue with Apple"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="17sp" />-->
 
     <TextView
         android:id="@+id/tv_reg"
