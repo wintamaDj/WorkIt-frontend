@@ -26,10 +26,10 @@ class LoginPage : AppCompatActivity() {
         etEmail = findViewById(R.id.et_email)
         etPassword = findViewById(R.id.et_password)
         val btnLogin = findViewById<Button>(R.id.btn_login)
-        val btnGoogle = findViewById<Button>(R.id.btn_google)
+//        val btnGoogle = findViewById<Button>(R.id.btn_google)
         val tvTitle = findViewById<TextView>(R.id.tv_title)
         val tvRegister = findViewById<TextView>(R.id.tv_reg)
-        val tvOr = findViewById<TextView>(R.id.tv_or)
+//        val tvOr = findViewById<TextView>(R.id.tv_or)
 
         tvRegister.setOnClickListener {
             val i = Intent(this@LoginPage, RegisterPage::class.java)

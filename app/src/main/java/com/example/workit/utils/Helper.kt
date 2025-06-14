@@ -22,7 +22,7 @@ class Helper(
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        // EXECUTE WHEN VERSION IS UPGRADED
+
         db?.execSQL(SQL_DROP_TABLE_USER)
         db?.execSQL(SQL_CREATE_TABLE_USER)
     }
