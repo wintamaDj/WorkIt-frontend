@@ -1,135 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream"
-    android:orientation="vertical"
     android:padding="37dp"
     tools:context=".LoginPage">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:gravity="center"
-        android:text="WorkIt"
-        android:textColor="@color/black"
-        android:textSize="48sp" />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="WorkIt"
+            android:textColor="@color/black"
+            android:textSize="48sp"/>
 
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:background="@drawable/textbox"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:paddingStart="21dp"
-        android:paddingTop="17dp"
-        android:paddingBottom="17dp"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/et_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:background="@drawable/textbox"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingStart="21dp"
-        android:paddingTop="17dp"
-        android:paddingBottom="17dp"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/tv_forgotpw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="7dp"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:text="Forgot your password?"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/button"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:paddingTop="13dp"
-        android:paddingBottom="13dp"
-        android:text="Login"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/tv_or"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:text="or"
-        android:textAlignment="center" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_google"
+        <EditText
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/google_button"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/textbox"
             android:fontFamily="@font/sfprodisplaybold"
-            android:paddingTop="11dp"
-            android:paddingBottom="11dp"
-            android:text="Login with Google"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="21dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_email"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/textbox"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="21dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_password"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:text="Login"
             android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="17sp" />
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
-    </LinearLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/tv_or"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="90dp"-->
+<!--            android:fontFamily="@font/sfprodisplaybold"-->
+<!--            android:text="or"-->
+<!--            android:textAlignment="center" />-->
 
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
 
-    <Button
-        android:id="@+id/btn_apple"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/apple_button"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:paddingTop="11dp"
-        android:paddingBottom="11dp"
-        android:text="Continue with Apple"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="17sp" />
+<!--            <Button-->
+<!--                android:id="@+id/btn_google"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:background="@drawable/google_button"-->
+<!--                android:fontFamily="@font/sfprodisplaybold"-->
+<!--                android:paddingTop="11dp"-->
+<!--                android:paddingBottom="11dp"-->
+<!--                android:text="Login with Google"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_reg"
-        android:layout_width="match_parent"
-        android:layout_marginTop="22dp"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account? Register."
-        />
+<!--        </LinearLayout>-->
 
+        <!--    <Button-->
+        <!--        android:id="@+id/btn_apple"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginTop="20dp"-->
+        <!--        android:background="@drawable/apple_button"-->
+        <!--        android:fontFamily="@font/sfprodisplaybold"-->
+        <!--        android:paddingTop="11dp"-->
+        <!--        android:paddingBottom="11dp"-->
+        <!--        android:text="Continue with Apple"-->
+        <!--        android:textAllCaps="false"-->
+        <!--        android:textColor="@color/white"-->
+        <!--        android:textSize="17sp" />-->
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:text="Don't have an account? Register."
+            android:textAlignment="center"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/black" />
+
+</RelativeLayout>

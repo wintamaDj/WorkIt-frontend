@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,21 +41,26 @@ class RegisterPage : AppCompatActivity() {
     }
 
     fun signUp() {
-        val username = etName.text.toString()
-        val email = etEmail.text.toString()
-        val password = etPassword.text.toString()
-        // val memberType = TODO: retrieve item from spinner
-//            val memberType = "Employee"
+        val username = etName.text.toString().trim()
+        val email = etEmail.text.toString().trim()
+        val password = etPassword.text.toString().trim()
 
-        DB.InsertNewUser(
-            this@RegisterPage,
-            username,
-            email,
-            password
-        )
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            return
+        }
 
+        DB.syncData(this)
 
+        if (DB.getUserByEmail(email) != null) {
+            Toast.makeText(this, "Email already registered", Toast.LENGTH_SHORT).show()
+            return
+        }
 
+        DB.InsertNewUser(this, username, email, password)
+        Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
+
+        startActivity(Intent(this, LoginPage::class.java))
         finish()
     }
 }

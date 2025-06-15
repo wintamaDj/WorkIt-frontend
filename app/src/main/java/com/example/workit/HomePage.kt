@@ -7,10 +7,6 @@ import android.widget.Button
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.workit.databinding.ActivityHomePageBinding
@@ -52,17 +48,18 @@ class HomePage : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.navView
 
-        val navController = findNavController(R.id.nav_frag)
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
-            )
-        )
         navView.selectedItemId = R.id.navigation_home
 
         navView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
+                    true
+                }
+
+                R.id.navigation_saved -> {
+                    val intent = Intent(this, SavedPage::class.java)
+                    startActivity(intent)
+                    finish()
                     true
                 }
 
@@ -119,12 +116,12 @@ class HomePage : AppCompatActivity() {
             }
         })
 
-        tabs.getTabAt(1)?.select()
-        binding.rvListjob.visibility = View.GONE
-        binding.rvListcompany.visibility = View.VISIBLE
-        binding.search.queryHint = "Search companies..."
-        binding.jobFilter.visibility = View.GONE
-        binding.companyFilter.visibility = View.VISIBLE
+        tabs.getTabAt(0)?.select()
+        rvJobs.visibility = View.VISIBLE
+        rvCompanies.visibility = View.GONE
+        binding.search.queryHint = "Search jobs..."
+        binding.jobFilter.visibility = View.VISIBLE
+        binding.companyFilter.visibility = View.GONE
 
         setupJobFilters()
         setupCompanyFilters()

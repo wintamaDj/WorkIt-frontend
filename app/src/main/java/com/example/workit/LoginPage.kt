@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,7 +15,7 @@ import com.example.workit.utils.DB
 class LoginPage : AppCompatActivity() {
     lateinit var etEmail: EditText
     lateinit var etName: EditText
-    lateinit var etPassword : EditText
+    lateinit var etPassword: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +26,10 @@ class LoginPage : AppCompatActivity() {
         etEmail = findViewById(R.id.et_email)
         etPassword = findViewById(R.id.et_password)
         val btnLogin = findViewById<Button>(R.id.btn_login)
-        val btnGoogle = findViewById<Button>(R.id.btn_google)
-        val btnApple = findViewById<Button>(R.id.btn_apple)
-        val tvForgot = findViewById<TextView>(R.id.tv_forgotpw)
+//        val btnGoogle = findViewById<Button>(R.id.btn_google)
         val tvTitle = findViewById<TextView>(R.id.tv_title)
         val tvRegister = findViewById<TextView>(R.id.tv_reg)
-        val tvOr = findViewById<TextView>(R.id.tv_or)
+//        val tvOr = findViewById<TextView>(R.id.tv_or)
 
         tvRegister.setOnClickListener {
             val i = Intent(this@LoginPage, RegisterPage::class.java)
@@ -44,18 +43,25 @@ class LoginPage : AppCompatActivity() {
 
     fun signIn() {
 
-//        val username = etEmail.text.toString()
-//        val password = etPassword.text.toString()
-//
-//
-//        DB.login(username, password)
-//        if (DB.LOGGED_IN_USER == null) {
-//            // INVALID CREDS
-//            return
-//        }
+        val email = etEmail.text.toString().trim()
+        val password = etPassword.text.toString().trim()
 
-        val i = Intent(this@LoginPage, HomePage::class.java)
-        startActivity(i)
+        if (email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        DB.syncData(this)
+        DB.login(email, password)
+
+        if (DB.LOGGED_IN_USER == null) {
+            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this, HomePage::class.java))
         finish()
+
     }
 }
