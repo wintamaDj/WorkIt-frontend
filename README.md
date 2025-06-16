@@ -4,22 +4,25 @@ Workit is an Android application developed in Kotlin that helps users find and e
 
 ## Features
 
-- User authentication (Login/Register)
+- User authentication (Login/Register)*
 - Job listings with detailed information
 - Company profiles and information
 - Bottom navigation for easy access to different sections:
   - Home
   - Dashboard
   - Notifications
-- Google and Apple sign-in options
-- Password recovery functionality
+- Google and Apple sign-in options*
+- Password recovery functionality*
+
+> [!NOTE]
+> \*Proper backend functionality still limited 
 
 ## Technical Details
 
 - **Language**: Kotlin
 - **Minimum SDK**: 34
 - **Target SDK**: 35
-- **Build System**: Gradle (Kotlin DSL)
+- **Build System**: Gradle 8.6 (Kotlin DSL)
 
 ## Project Structure
 
@@ -35,8 +38,9 @@ The app follows a modern Android architecture with the following main components
 
 1. Clone the repository
 2. Open the project in Android Studio
-3. Sync Gradle files
-4. Run the application on an emulator or physical device
+4. (dev only) save changes with `gradlew dependencyguardbaseline` after making changes to packages
+5. Sync Gradle files
+6. Run the application on an emulator or physical device
 
 ## Dependencies
 
@@ -46,6 +50,8 @@ The app follows a modern Android architecture with the following main components
 - ConstraintLayout
 - ViewBinding
 - Navigation Components
+- Retrofit
+- OkHttp
 
 ## Build Configuration
 
